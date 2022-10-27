@@ -1,4 +1,4 @@
-package ACT4;
+package act4;
 
 import java.awt.Component;
 import java.awt.EventQueue;
