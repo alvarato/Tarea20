@@ -1,4 +1,4 @@
-package com.appMockito.ejemplo.equipo6.act3;
+package act3;
 
 import java.awt.EventQueue;
 
