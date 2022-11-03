@@ -20,6 +20,7 @@ import java.awt.event.ContainerAdapter;
 import java.awt.event.ContainerEvent;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import javax.swing.JScrollPane;
 
 public class JFrame4 extends JFrame {
 
@@ -60,6 +61,7 @@ public class JFrame4 extends JFrame {
 		contentPane.add(etiqueta);
 		
 		JTextArea textarea= new JTextArea();
+		textarea.setEditable(false);
 		textarea.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -69,8 +71,18 @@ public class JFrame4 extends JFrame {
 				textarea.append("Tecla pulsada\n");
 			}
 		});
+		textarea.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				textarea.append("Raton clicado\n");
+			}
+		});
 		textarea.setBounds(80, 11, 332, 239);
 		contentPane.add(textarea);
+		
+		JScrollPane scrollPane = new JScrollPane(textarea);
+		scrollPane.setBounds(68, 11, 333, 239);
+		contentPane.add(scrollPane);
 		
 		addComponentListener(new ComponentAdapter() {
 			@Override
@@ -139,6 +151,6 @@ public class JFrame4 extends JFrame {
 			}
 			
 		});
+		
 	}
-
 }
